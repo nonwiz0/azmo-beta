@@ -33,6 +33,10 @@ export const getStaticProps = async ({ params }) => {
                   text
                 }
               }
+              ... on PagesBlocksVerse{
+                body
+                color
+              }
               ... on PagesBlocksContent {
                 body
                 color
