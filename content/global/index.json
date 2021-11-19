@@ -1,0 +1,57 @@
+{
+  "header": {
+    "icon": {
+      "color": "primary",
+      "style": "float",
+      "name": "tina"
+    },
+    "color": "primary",
+    "title_header": "Testing",
+    "posts": [
+      {
+        "href": "blog",
+        "label": "Blog"
+      },
+      {
+        "href": "blog",
+        "label": "Vlog"
+      },
+      {
+        "href": "blog",
+        "label": "Storybook"
+      },
+      {
+        "href": "blog",
+        "label": "Collection"
+      }
+    ],
+    "nav": [
+      {
+        "href": "",
+        "label": "Home"
+      },
+      {
+        "href": "about",
+        "label": "About"
+      },
+      {
+        "href": "posts",
+        "label": "Blog"
+      }
+    ]
+  },
+  "footer": {
+    "color": "primary",
+    "social": {
+      "facebook": "/",
+      "twitter": "/",
+      "instagram": "/"
+    }
+  },
+  "theme": {
+    "color": "wgray",
+    "font": "poppins",
+    "icon": "heroicon",
+    "darkMode": "dark"
+  }
+}
