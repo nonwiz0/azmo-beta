@@ -1,7 +1,7 @@
 ---
 blocks:
-  - body: Testing in put
-    author: Author input test
+  - body: Let Love and Kindness be the motivation behind all that you do
+    author: '1 Corinthians 16:14'
     color: tint
     _template: verse
   - quote: >-
