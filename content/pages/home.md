@@ -1,31 +1,19 @@
 ---
 blocks:
-  - body: Let Love and Kindness be the motivation behind all that you do
-    author: '1 Corinthians 16:14'
-    color: tint
-    _template: verse
-  - quote: >-
-      There are only two hard things in Computer Science: cache invalidation and
-      naming things.zcvzxcvx
-    author: Phil Karlton
-    color: primary
-    _template: testimonial
-  - tagline: '#12312312'
+  - tagline: Let's grow together!
     headline: Welcome to Azmo
-    text: >
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      `content/pages/home.md`, components from `components/blocks`, and puts
-      them all together in `pages/[filename].tsx`, all based on a schema defined
-      in `.tina/schema.ts`.
+    text: >-
+      We are so excited to launch our brand Azmo's page. Our goal is to use this
+      space to connect with you through our story, idea and tips, and knowledge.
+      if you have any questions please do sent us a message.
     actions:
-      - label: Get Started
+      - label: Learn more
         type: button
-        icon: true
-        link: /posts
+        icon: false
+        link: /
       - label: Read Blog
         type: link
-        icon: false
+        icon: true
         link: /posts
     image:
       src: >-
@@ -33,6 +21,10 @@ blocks:
       alt: Tina
     color: default
     _template: hero
+  - body: Let Love and Kindness be the motivation behind all that you do!
+    author: '1 Corinthians 16:14'
+    color: primary
+    _template: verse
   - items:
       - icon:
           color: red
@@ -58,5 +50,13 @@ blocks:
           color, font, or icon set.
     color: tint
     _template: features
+  - quote: >-
+      We believe that every aspect is important for us to growth to obtain
+      maximum healthy lifestyle. Therefore, we believe that our spiritual health
+      should put at first place follow by physical and mental. Together we can
+      obtain a better healthy lifestyle.
+    author: Azmo
+    color: primary
+    _template: testimonial
 ---
 

@@ -1,7 +1,7 @@
 {
   "collections": [
     {
-      "label": "Blog Posts",
+      "label": "All Posts",
       "name": "posts",
       "path": "content/posts",
       "fields": [
@@ -24,6 +24,74 @@
           "namespace": [
             "posts",
             "author"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Type",
+          "name": "type",
+          "options": [
+            {
+              "label": "Blog",
+              "value": "blog"
+            },
+            {
+              "label": "Vlog",
+              "value": "vlog"
+            },
+            {
+              "label": "Storybook",
+              "value": "storybook"
+            },
+            {
+              "label": "collection",
+              "value": "collection"
+            }
+          ],
+          "ui": {
+            "defaultItem": {
+              "label": "Blog",
+              "value": "blog"
+            }
+          },
+          "namespace": [
+            "posts",
+            "type"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Category",
+          "name": "category",
+          "options": [
+            {
+              "label": "Life Hack",
+              "value": "lifehack"
+            },
+            {
+              "label": "Health",
+              "value": "health"
+            },
+            {
+              "label": "Mental",
+              "value": "mental"
+            },
+            {
+              "label": "Design",
+              "value": "design"
+            },
+            {
+              "label": "Book",
+              "value": "book"
+            },
+            {
+              "label": "Bedtime story",
+              "value": "bedtime"
+            }
+          ],
+          "namespace": [
+            "posts",
+            "category"
           ]
         },
         {
@@ -58,6 +126,60 @@
           "namespace": [
             "posts",
             "excerpt"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Author's Note",
+          "name": "note",
+          "ui": {
+            "component": "textarea"
+          },
+          "namespace": [
+            "posts",
+            "note"
+          ]
+        },
+        {
+          "type": "object",
+          "label": "Attachment",
+          "name": "attachment",
+          "list": true,
+          "fields": [
+            {
+              "type": "string",
+              "label": "Link",
+              "name": "link",
+              "namespace": [
+                "posts",
+                "attachment",
+                "link"
+              ]
+            },
+            {
+              "type": "image",
+              "label": "Image",
+              "name": "attImage",
+              "namespace": [
+                "posts",
+                "attachment",
+                "attImage"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Title / Description",
+              "name": "description",
+              "namespace": [
+                "posts",
+                "attachment",
+                "description"
+              ]
+            }
+          ],
+          "namespace": [
+            "posts",
+            "attachment"
           ]
         },
         {
@@ -293,12 +415,22 @@
             },
             {
               "type": "string",
-              "label": "Field Title",
-              "name": "title_header",
+              "label": "Email",
+              "name": "email",
               "namespace": [
                 "global",
                 "header",
-                "title_header"
+                "email"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Donate",
+              "name": "donate",
+              "namespace": [
+                "global",
+                "header",
+                "donate"
               ]
             },
             {
@@ -454,13 +586,24 @@
                 },
                 {
                   "type": "string",
-                  "label": "Github",
-                  "name": "github",
+                  "label": "Pinterest",
+                  "name": "pinterest",
                   "namespace": [
                     "global",
                     "footer",
                     "social",
-                    "github"
+                    "pinterest"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Gmail",
+                  "name": "gmail",
+                  "namespace": [
+                    "global",
+                    "footer",
+                    "social",
+                    "gmail"
                   ]
                 }
               ],
@@ -531,6 +674,58 @@
                 "global",
                 "theme",
                 "color"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Secondary Color",
+              "name": "scolor",
+              "options": [
+                {
+                  "label": "Blue",
+                  "value": "blue"
+                },
+                {
+                  "label": "Teal",
+                  "value": "teal"
+                },
+                {
+                  "label": "Green",
+                  "value": "green"
+                },
+                {
+                  "label": "Red",
+                  "value": "red"
+                },
+                {
+                  "label": "Pink",
+                  "value": "pink"
+                },
+                {
+                  "label": "Purple",
+                  "value": "purple"
+                },
+                {
+                  "label": "Orange",
+                  "value": "orange"
+                },
+                {
+                  "label": "Yellow",
+                  "value": "yellow"
+                },
+                {
+                  "label": "Warm Gray",
+                  "value": "wgray"
+                },
+                {
+                  "label": "Rose",
+                  "value": "rose"
+                }
+              ],
+              "namespace": [
+                "global",
+                "theme",
+                "scolor"
               ]
             },
             {
@@ -1228,7 +1423,7 @@
                 {
                   "type": "string",
                   "ui": {
-                    "component": "markdown"
+                    "component": "textarea"
                   },
                   "label": "Body",
                   "name": "body",

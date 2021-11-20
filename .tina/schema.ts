@@ -248,7 +248,6 @@ const contentBlockSchema: TinaTemplate = {
   ],
 };
 
-
 const verseBlockSchema: TinaTemplate = {
   name: "verse",
   label: "Verse",
@@ -262,7 +261,7 @@ const verseBlockSchema: TinaTemplate = {
     {
       type: "string",
       ui: {
-        component: "markdown",
+        component: "textarea",
       },
       label: "Body",
       name: "body",
@@ -425,7 +424,7 @@ const heroBlockSchema: TinaTemplate = {
 export default defineSchema({
   collections: [
     {
-      label: "Blog Posts",
+      label: "All Posts",
       name: "posts",
       path: "content/posts",
       fields: [
@@ -439,6 +438,34 @@ export default defineSchema({
           label: "Author",
           name: "author",
           collections: ["authors"],
+        },
+        {
+          type: "string",
+          label: "Type",
+          name: "type",
+          options: [
+            { label: "Blog", value: "blog"},
+            { label: "Vlog", value: "vlog" },
+            { label: "Storybook", value: "storybook" },
+            { label: "collection", value: "collection" },
+          ],
+          ui: {
+            defaultItem: {label: "Blog", value: "blog"}
+          }
+        },
+       
+        {
+          type: "string",
+          label: "Category",
+          name: "category",
+          options: [
+            { label: "Life Hack", value: "lifehack" },
+            { label: "Health", value: "health" },
+            { label: "Mental", value: "mental" },
+            { label: "Design", value: "design" },
+            { label: "Book", value: "book" },
+            { label: "Bedtime story", value: "bedtime" },
+          ],
         },
         {
           type: "datetime",
@@ -464,6 +491,35 @@ export default defineSchema({
         },
         {
           type: "string",
+          label: "Author's Note",
+          name: "note",
+          ui: { component: "textarea" }
+        },
+        {
+          type: "object",
+          label: "Attachment",
+          name: "attachment",
+          list: true,
+          fields: [
+            {
+              type: "string",
+              label: "Link",
+              name: "link"
+            },
+            {
+              type: "image",
+              label: "Image",
+              name: "attImage",
+            },
+            {
+              type: "string",
+              label: "Title / Description",
+              name: "description",
+            }
+          ]
+        },
+        {
+          type: "string",
           label: "Body",
           ui: {
             component: "markdown",
@@ -471,6 +527,7 @@ export default defineSchema({
           name: "body",
           isBody: true,
         },
+        
       ],
     },
     {
@@ -495,10 +552,16 @@ export default defineSchema({
             },
             {
               type: "string",
-              label: "Field Title",
-              name: "title_header",
+              label: "Email",
+              name: "email",
             },
-           {
+            {
+              type: "string",
+              label: "Donate",
+              name: "donate",
+            },
+
+            {
               type: "object",
               label: "Posts Dropdown Links",
               name: "posts",
@@ -585,8 +648,13 @@ export default defineSchema({
                 },
                 {
                   type: "string",
-                  label: "Github",
-                  name: "github",
+                  label: "Pinterest",
+                  name: "pinterest",
+                },
+                {
+                  type: "string",
+                  label: "Gmail",
+                  name: "gmail",
                 },
               ],
             },
@@ -642,7 +710,54 @@ export default defineSchema({
                   label: "Rose",
                   value: "rose",
                 },
+              ],
+            },
 
+            {
+              type: "string",
+              label: "Secondary Color",
+              name: "scolor",
+              options: [
+                {
+                  label: "Blue",
+                  value: "blue",
+                },
+                {
+                  label: "Teal",
+                  value: "teal",
+                },
+                {
+                  label: "Green",
+                  value: "green",
+                },
+                {
+                  label: "Red",
+                  value: "red",
+                },
+                {
+                  label: "Pink",
+                  value: "pink",
+                },
+                {
+                  label: "Purple",
+                  value: "purple",
+                },
+                {
+                  label: "Orange",
+                  value: "orange",
+                },
+                {
+                  label: "Yellow",
+                  value: "yellow",
+                },
+                {
+                  label: "Warm Gray",
+                  value: "wgray",
+                },
+                {
+                  label: "Rose",
+                  value: "rose",
+                },
               ],
             },
             {

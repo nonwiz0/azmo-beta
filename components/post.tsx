@@ -19,6 +19,9 @@ export const Post = ({ data }) => {
       "from-orange-300 to-orange-600 dark:from-orange-200 dark:to-orange-500",
     yellow:
       "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
+    wgray:
+      "from-wgray-400 to-wgray-500 dark:from-wgray-300 dark:to-wgray-500",
+
   };
   /**
    * Formats date field value to be more readable.
@@ -49,7 +52,7 @@ export const Post = ({ data }) => {
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
-                  className="h-14 w-14 object-cover rounded-full shadow-sm"
+                  className="object-cover rounded-full h-14 w-14 shadow-sm"
                   src={data.author.data.avatar}
                   alt={data.author.data.name}
                 />
@@ -57,7 +60,7 @@ export const Post = ({ data }) => {
               <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
                 {data.author.data.name}
               </p>
-              <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
+              <span className="mx-2 font-bold text-gray-200 dark:text-gray-500">
                 —
               </span>
             </>
@@ -68,16 +71,16 @@ export const Post = ({ data }) => {
         </div>
       </Container>
       {data.heroImg && (
-        <div className="px-6 max-w-4xl lg:max-w-6xl flex justify-center mx-auto">
+        <div className="flex justify-center max-w-4xl px-6 mx-auto lg:max-w-6xl">
           <img
             src={data.heroImg}
-            className="mb-14 block h-auto max-w-full mx-auto object-cover rounded-md"
+            className="block object-cover h-auto max-w-full mx-auto mb-14 rounded-md"
             style={{ maxHeight: "80vh" }}
           />
         </div>
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
-        <div className="prose dark:prose-dark  w-full max-w-none">
+        <div className="w-full prose dark:prose-dark max-w-none">
           <Markdown>{data.body}</Markdown>
         </div>
       </Container>

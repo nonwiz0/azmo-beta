@@ -16,7 +16,7 @@ export const Hero = ({ data }) => {
     purple: "from-purple-400 to-purple-600",
     orange: "from-orange-300 to-orange-600",
     yellow: "from-yellow-400 to-yellow-600",
-    wgray: "from-wgray-500 to-wgray-800",
+    wgray: "from-wgray-500 to-rose-800",
   };
 
   return (

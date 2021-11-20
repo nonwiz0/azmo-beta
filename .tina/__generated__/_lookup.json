@@ -117,5 +117,11 @@
     "type": "GlobalConnection",
     "resolveType": "collectionDocumentList",
     "collection": "global"
+  },
+  "PostsCategoryDocument": {
+    "type": "PostsCategoryDocument",
+    "resolveType": "multiCollectionDocument",
+    "createDocument": "create",
+    "updateDocument": "update"
   }
 }

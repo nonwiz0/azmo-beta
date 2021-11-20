@@ -1,10 +1,25 @@
 ---
-title: Just Another Blog Post
+title: Selfish vs Self-loving
 author: content/authors/napoleon.md
+type: blog
+category: mental
 date: '2021-07-03T20:30:00.000Z'
-excerpt: "Lorem markdownum evinctus ut cape adhaeret gravis licet progenies ut haesit maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad vasti, distulit. Crudus sub coniuge iam: dea propera sive?"
-_template: article
+heroImg: >-
+  http://res.cloudinary.com/azmo/image/upload/v1637292683/3_illustrator_vzqpak.jpg
+excerpt: 'Blog''s excerpt, selfish vs self-loving blog, awehfawefawefawefawefawef'
+note: This is author note. Checkign awefawefawefa wefiuha wefawef a.
+attachment:
+  - link: 'https://tailwindcss.com/docs/font-style#italics'
+    description: 'Attachment #2'
+  - link: >-
+      https://github.com/tinacms/tina-cloud-starter/commit/7edd8a11a2a3a513c2d1bcc1e1cd57ef32505f37#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519
+    attImage: >-
+      http://res.cloudinary.com/azmo/image/upload/v1637292683/3_illustrator_vzqpak.jpg
+    description: 'Attachment #1'
 ---
+
+
+
 
 Lorem markdownum evinctus _ut cape_ adhaeret gravis licet progenies ut haesit
 maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad

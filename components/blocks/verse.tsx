@@ -4,17 +4,37 @@ import { Container } from "../container";
 import { Section } from "../section";
 
 export const Verse = ({ data }) => {
-  console.log("Verse", data);
   return (
-    <Section color={data.color}>
-      <Container
-        className={`max-w-4xl prose prose-lg ${
-          data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-        }`}
-        size="large"
-      >
-        <Markdown>{data.body}</Markdown>
-      </Container>
-    </Section>
-  );
+  <div className="flex items-center justify-center text-white bg-wgray-500">
+      <div className="max-w-xl px-5 py-1 mx-5">
+        <div className="w-full mb-1">
+          <p className="text-sm text-center">
+            <span className="text-gray-50">&#10077;</span>
+            {data.body}
+            <span className="text-gray-50">&#10078;</span>
+          </p>
+        </div>
+        <div className="w-full">
+          <p className="text-xs text-right">
+            {data.author}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
 };
+
+
+    {/* <Section color={data.color}> */}
+    {/*   <Container */}
+    {/*     size="xsmall" */}
+    {/*     className={`w-full ${ */}
+    {/*       data.color === "primary" ? `bg-wgray-500 text-wgray-50` : `` */}
+    {/*     }`} */}
+    {/*   > */}
+    {/*     <Markdown>{data.body}</Markdown> */}
+    {/*     <p className="mr-10 text-right">{data.author}</p> */}
+    {/*   </Container> */}
+    {/* </Section> */}
+
+

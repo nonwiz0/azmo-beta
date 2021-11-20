@@ -32,11 +32,11 @@ export const Testimonial = ({ data }) => {
             >
               &ldquo;
             </span>
-            <p className="relative opacity-95 text-4xl lg:text-5xl">
+            <p className="relative text-xl opacity-95 lg:text-5xl">
               <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
                   data.color === "primary"
-                    ? `from-white to-gray-100`
+                    ? `from-wgray-500 to-gray-800`
                     : quoteColorClasses[theme.color]
                 }`}
               >
@@ -57,7 +57,7 @@ export const Testimonial = ({ data }) => {
           <footer className="text-center">
             <p
               className={`tracking-wide title-font font-bold text-lg ${
-                data.color === "primary" && `text-white opacity-70`
+                data.color === "primary" && `text-wgray-500 opacity-70`
               }`}
             >
               {data.author}

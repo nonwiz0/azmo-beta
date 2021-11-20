@@ -1,13 +1,24 @@
 ---
-title: Vote For Pedro
-author: content/authors/pedro.md
+title: 'Storybook: Designig '
+author: content/authors/azla.md
+type: storybook
+category: design
 date: '2021-07-03T20:30:00.000Z'
+heroImg: 'http://res.cloudinary.com/azmo/image/upload/v1637292688/vlog_room_fpu9uu.png'
 excerpt: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo
   vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla
   facilities morbi tempus.
+note: >-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo
+  vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla
+  facilities morbi tempus.
 ---
+
+
+
 Lorem markdownum evinctus _ut cape_ adhaeret gravis licet progenies ut haesit
 maxima ille. Est scorpius, mori vel in visaeque Haemoniis viperei furoris e ad
 vasti, **distulit**. Crudus sub **coniuge iam**: dea propera sive?

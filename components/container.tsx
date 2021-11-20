@@ -2,9 +2,10 @@ import React from "react";
 
 export const Container = ({ children, size = "medium", className = "" }) => {
   const verticalPadding = {
+    xsmall: "py-1",
     small: "py-8",
     medium: "py-12",
-    large: "py-24",
+    large: "py-20",
     default: "py-12",
   };
 

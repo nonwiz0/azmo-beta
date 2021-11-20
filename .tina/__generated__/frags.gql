@@ -1,0 +1,123 @@
+fragment PostsParts on Posts {
+  title
+  author {
+    ... on Document {
+      id
+    }
+  }
+  type
+  category
+  date
+  heroImg
+  excerpt
+  note
+  attachment {
+    __typename
+    link
+    attImage
+    description
+  }
+  body
+}
+
+fragment GlobalParts on Global {
+  header {
+    __typename
+    icon {
+      __typename
+      color
+      style
+      name
+    }
+    color
+    email
+    donate
+    posts {
+      __typename
+      href
+      label
+    }
+    nav {
+      __typename
+      href
+      label
+    }
+  }
+  footer {
+    __typename
+    color
+    social {
+      __typename
+      facebook
+      twitter
+      instagram
+      pinterest
+      gmail
+    }
+  }
+  theme {
+    __typename
+    color
+    scolor
+    font
+    icon
+    darkMode
+  }
+}
+
+fragment AuthorsParts on Authors {
+  name
+  avatar
+}
+
+fragment PagesParts on Pages {
+  blocks {
+    __typename
+    ... on PagesBlocksHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PagesBlocksFeatures {
+      items {
+        __typename
+        icon {
+          __typename
+          color
+          style
+          name
+        }
+        title
+        text
+      }
+      color
+    }
+    ... on PagesBlocksContent {
+      body
+      color
+    }
+    ... on PagesBlocksVerse {
+      body
+      author
+      color
+    }
+    ... on PagesBlocksTestimonial {
+      quote
+      author
+      color
+    }
+  }
+}

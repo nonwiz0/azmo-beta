@@ -36,13 +36,13 @@ const App = ({ Component, pageProps }) => {
                 return (window.location.href = relativeUrl);
               },
               /**
-               * Only allows documents to be created to the `Blog Posts` Collection
+               * Only allows documents to be created to the `All Posts` Collection
                */
-              filterCollections: (options) => {
-                return options.filter(
-                  (option) => option.label === "Blog Posts"
-                );
-              },
+              // filterCollections: (options) => {
+              //   return options.filter(
+              //     (option) => option.label === "All Posts"
+              //   );
+              // },
             }}
             /**
              * Treat the Global collection as a global form

@@ -6,37 +6,38 @@
       "name": "tina"
     },
     "color": "primary",
-    "title_header": "Testing",
+    "email": "mailto:angelaura9629@gmail.com",
+    "donate": "https://paypal.me/azlasorubou83?country.x=MY&locale.x=en_US",
     "posts": [
       {
-        "href": "blog",
+        "href": "/posts?type=blog",
         "label": "Blog"
       },
       {
-        "href": "blog",
+        "href": "/posts?type=vlog",
         "label": "Vlog"
       },
       {
-        "href": "blog",
+        "href": "/posts?type=storybook",
         "label": "Storybook"
       },
       {
-        "href": "blog",
+        "href": "/posts?type=collection",
         "label": "Collection"
       }
     ],
     "nav": [
       {
-        "href": "",
-        "label": "Home"
+        "href": "/about",
+        "label": "Who are we"
       },
       {
         "href": "about",
-        "label": "About"
+        "label": "Privacy"
       },
       {
         "href": "posts",
-        "label": "Blog"
+        "label": "Roadmap"
       }
     ]
   },
@@ -44,14 +45,17 @@
     "color": "primary",
     "social": {
       "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "twitter": "https://twitter.com/AzmoCherish",
+      "instagram": "https://www.instagram.com/azmo.page/",
+      "pinterest": "https://pinterest.com/Azlasorubou",
+      "gmail": "mailto:angelaura9629@gmail.com"
     }
   },
   "theme": {
     "color": "wgray",
+    "scolor": "rose",
     "font": "poppins",
     "icon": "heroicon",
-    "darkMode": "dark"
+    "darkMode": "light"
   }
 }
