@@ -63,15 +63,7 @@ export const Header = ({ data }) => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    const root = window.document.documentElement;
-    if (enabled) {
-      return root.classList.add("dark");
-    }
-    root.classList.remove("dark");
-  }, [enabled]);
-
-  return (
+    return (
     <div>
       <Container className={`relative z-10 py-0 max-w-8xl dark:bg-wgray-800`}>
         <div className="flex items-center justify-between">
@@ -129,7 +121,7 @@ export const Header = ({ data }) => {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-20 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
+                    <Popover.Panel className="absolute z-20 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0">
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative bg-white grid gap-8 p-7 lg:grid-cols-2">
                           {data.posts.map((item) => (
@@ -196,7 +188,7 @@ export const Header = ({ data }) => {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-20 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl">
+                    <Popover.Panel className="absolute z-20 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0">
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative bg-white grid gap-8 p-7 lg:grid-cols-2">
                           {data.nav.map((item) => (

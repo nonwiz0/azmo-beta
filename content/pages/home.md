@@ -7,17 +7,13 @@ blocks:
       space to connect with you through our story, idea and tips, and knowledge.
       if you have any questions please do sent us a message.
     actions:
-      - label: Learn more
-        type: button
-        icon: false
-        link: /
       - label: Read Blog
-        type: link
+        type: button
         icon: true
         link: /posts
     image:
       src: >-
-        http://res.cloudinary.com/azmo/image/upload/v1637292688/vlog_journey_yen6eo.png
+        http://res.cloudinary.com/azmo/image/upload/v1637292683/1_illustrator_vrjh33.jpg
       alt: Tina
     color: default
     _template: hero

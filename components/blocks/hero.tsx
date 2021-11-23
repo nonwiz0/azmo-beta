@@ -16,25 +16,25 @@ export const Hero = ({ data }) => {
     purple: "from-purple-400 to-purple-600",
     orange: "from-orange-300 to-orange-600",
     yellow: "from-yellow-400 to-yellow-600",
-    wgray: "from-wgray-500 to-rose-800",
+    wgray: "from-wgray-400 to-wgray-800",
   };
 
   return (
     <Section color={data.color}>
       <Container
-        size="large"
-        className="items-center justify-center grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-8"
+        size="medium"
+        className="items-center justify-center grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-8 lg:py-20"
       >
         <div className="text-center row-start-2 lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:text-left">
           {data.tagline && (
-            <h2 className="relative z-20 inline-block px-3 py-1 mb-8 font-bold tracking-wide text-md title-font">
+            <h2 className="relative z-20 inline-block px-3 py-1 mb-4 font-bold tracking-wide text-md title-font">
               {data.tagline}
               <span className="absolute top-0 left-0 w-full h-full rounded-full -z-1 bg-current opacity-7"></span>
             </h2>
           )}
           {data.headline && (
             <h3
-              className={`w-full block relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
+              className={`w-full block relative	mb-5 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
                 className={`bg-clip-text inline-block text-transparent bg-gradient-to-r  ${

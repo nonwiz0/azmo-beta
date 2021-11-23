@@ -66,6 +66,10 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
 export const layoutQueryFragment = `
   getGlobalDocument(relativePath: "index.json") {
     data {
+      verse {
+        body
+        author
+      }
       header {
         icon {
           name

@@ -537,6 +537,23 @@ export default defineSchema({
       fields: [
         {
           type: "object",
+          label: "Bible Verse",
+          name: "verse",
+          fields: [
+            {
+              type: "string",
+              label: "Text",
+              name: "body",
+            },
+            {
+              type: "string",
+              label: "Author",
+              name: "author",
+            }
+          ]
+        },
+        {
+          type: "object",
           label: "Header",
           name: "header",
           fields: [

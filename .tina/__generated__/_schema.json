@@ -207,6 +207,37 @@
       "fields": [
         {
           "type": "object",
+          "label": "Bible Verse",
+          "name": "verse",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Text",
+              "name": "body",
+              "namespace": [
+                "global",
+                "verse",
+                "body"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Author",
+              "name": "author",
+              "namespace": [
+                "global",
+                "verse",
+                "author"
+              ]
+            }
+          ],
+          "namespace": [
+            "global",
+            "verse"
+          ]
+        },
+        {
+          "type": "object",
           "label": "Header",
           "name": "header",
           "fields": [

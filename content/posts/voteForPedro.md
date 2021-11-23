@@ -1,10 +1,11 @@
 ---
-title: 'Storybook: Designig '
-author: content/authors/azla.md
+title: 'Storybook: Design'
+author: content/authors/napoleon.md
 type: storybook
 category: design
 date: '2021-07-03T20:30:00.000Z'
-heroImg: 'http://res.cloudinary.com/azmo/image/upload/v1637292688/vlog_room_fpu9uu.png'
+heroImg: >-
+  http://res.cloudinary.com/azmo/image/upload/v1637292683/2_illustrator_w3okz7.jpg
 excerpt: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo
@@ -16,6 +17,8 @@ note: >-
   vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla
   facilities morbi tempus.
 ---
+
+
 
 
 

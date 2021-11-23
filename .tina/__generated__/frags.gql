@@ -21,6 +21,11 @@ fragment PostsParts on Posts {
 }
 
 fragment GlobalParts on Global {
+  verse {
+    __typename
+    body
+    author
+  }
   header {
     __typename
     icon {

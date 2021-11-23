@@ -124,6 +124,11 @@ type PostsConnection implements Connection {
   edges: [PostsConnectionEdges]
 }
 
+type GlobalVerse {
+  body: String
+  author: String
+}
+
 type GlobalHeaderIcon {
   color: String
   style: String
@@ -171,6 +176,7 @@ type GlobalTheme {
 }
 
 type Global {
+  verse: GlobalVerse
   header: GlobalHeader
   footer: GlobalFooter
   theme: GlobalTheme
@@ -342,6 +348,11 @@ input PostsMutation {
   body: String
 }
 
+input GlobalVerseMutation {
+  body: String
+  author: String
+}
+
 input GlobalHeaderIconMutation {
   color: String
   style: String
@@ -389,6 +400,7 @@ input GlobalThemeMutation {
 }
 
 input GlobalMutation {
+  verse: GlobalVerseMutation
   header: GlobalHeaderMutation
   footer: GlobalFooterMutation
   theme: GlobalThemeMutation

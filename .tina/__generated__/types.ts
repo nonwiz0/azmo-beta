@@ -235,6 +235,12 @@ export type PostsConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
 };
 
+export type GlobalVerse = {
+  __typename?: 'GlobalVerse';
+  body?: Maybe<Scalars['String']>;
+  author?: Maybe<Scalars['String']>;
+};
+
 export type GlobalHeaderIcon = {
   __typename?: 'GlobalHeaderIcon';
   color?: Maybe<Scalars['String']>;
@@ -290,6 +296,7 @@ export type GlobalTheme = {
 
 export type Global = {
   __typename?: 'Global';
+  verse?: Maybe<GlobalVerse>;
   header?: Maybe<GlobalHeader>;
   footer?: Maybe<GlobalFooter>;
   theme?: Maybe<GlobalTheme>;
@@ -551,6 +558,11 @@ export type PostsMutation = {
   body?: InputMaybe<Scalars['String']>;
 };
 
+export type GlobalVerseMutation = {
+  body?: InputMaybe<Scalars['String']>;
+  author?: InputMaybe<Scalars['String']>;
+};
+
 export type GlobalHeaderIconMutation = {
   color?: InputMaybe<Scalars['String']>;
   style?: InputMaybe<Scalars['String']>;
@@ -598,6 +610,7 @@ export type GlobalThemeMutation = {
 };
 
 export type GlobalMutation = {
+  verse?: InputMaybe<GlobalVerseMutation>;
   header?: InputMaybe<GlobalHeaderMutation>;
   footer?: InputMaybe<GlobalFooterMutation>;
   theme?: InputMaybe<GlobalThemeMutation>;
@@ -677,7 +690,7 @@ export type PagesMutation = {
 
 export type PostsPartsFragment = { __typename?: 'Posts', title?: string | null | undefined, type?: string | null | undefined, category?: string | null | undefined, date?: string | null | undefined, heroImg?: string | null | undefined, excerpt?: string | null | undefined, note?: string | null | undefined, body?: string | null | undefined, author?: { __typename?: 'AuthorsDocument', id: string } | null | undefined, attachment?: Array<{ __typename: 'PostsAttachment', link?: string | null | undefined, attImage?: string | null | undefined, description?: string | null | undefined } | null | undefined> | null | undefined };
 
-export type GlobalPartsFragment = { __typename?: 'Global', header?: { __typename: 'GlobalHeader', color?: string | null | undefined, email?: string | null | undefined, donate?: string | null | undefined, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined, posts?: Array<{ __typename: 'GlobalHeaderPosts', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined, footer?: { __typename: 'GlobalFooter', color?: string | null | undefined, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null | undefined, twitter?: string | null | undefined, instagram?: string | null | undefined, pinterest?: string | null | undefined, gmail?: string | null | undefined } | null | undefined } | null | undefined, theme?: { __typename: 'GlobalTheme', color?: string | null | undefined, scolor?: string | null | undefined, font?: string | null | undefined, icon?: string | null | undefined, darkMode?: string | null | undefined } | null | undefined };
+export type GlobalPartsFragment = { __typename?: 'Global', verse?: { __typename: 'GlobalVerse', body?: string | null | undefined, author?: string | null | undefined } | null | undefined, header?: { __typename: 'GlobalHeader', color?: string | null | undefined, email?: string | null | undefined, donate?: string | null | undefined, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined, posts?: Array<{ __typename: 'GlobalHeaderPosts', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined, footer?: { __typename: 'GlobalFooter', color?: string | null | undefined, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null | undefined, twitter?: string | null | undefined, instagram?: string | null | undefined, pinterest?: string | null | undefined, gmail?: string | null | undefined } | null | undefined } | null | undefined, theme?: { __typename: 'GlobalTheme', color?: string | null | undefined, scolor?: string | null | undefined, font?: string | null | undefined, icon?: string | null | undefined, darkMode?: string | null | undefined } | null | undefined };
 
 export type AuthorsPartsFragment = { __typename?: 'Authors', name?: string | null | undefined, avatar?: string | null | undefined };
 
@@ -700,12 +713,12 @@ export type GetGlobalDocumentQueryVariables = Exact<{
 }>;
 
 
-export type GetGlobalDocumentQuery = { __typename?: 'Query', getGlobalDocument: { __typename?: 'GlobalDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Global', header?: { __typename: 'GlobalHeader', color?: string | null | undefined, email?: string | null | undefined, donate?: string | null | undefined, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined, posts?: Array<{ __typename: 'GlobalHeaderPosts', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined, footer?: { __typename: 'GlobalFooter', color?: string | null | undefined, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null | undefined, twitter?: string | null | undefined, instagram?: string | null | undefined, pinterest?: string | null | undefined, gmail?: string | null | undefined } | null | undefined } | null | undefined, theme?: { __typename: 'GlobalTheme', color?: string | null | undefined, scolor?: string | null | undefined, font?: string | null | undefined, icon?: string | null | undefined, darkMode?: string | null | undefined } | null | undefined } } };
+export type GetGlobalDocumentQuery = { __typename?: 'Query', getGlobalDocument: { __typename?: 'GlobalDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Global', verse?: { __typename: 'GlobalVerse', body?: string | null | undefined, author?: string | null | undefined } | null | undefined, header?: { __typename: 'GlobalHeader', color?: string | null | undefined, email?: string | null | undefined, donate?: string | null | undefined, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined, posts?: Array<{ __typename: 'GlobalHeaderPosts', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined, footer?: { __typename: 'GlobalFooter', color?: string | null | undefined, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null | undefined, twitter?: string | null | undefined, instagram?: string | null | undefined, pinterest?: string | null | undefined, gmail?: string | null | undefined } | null | undefined } | null | undefined, theme?: { __typename: 'GlobalTheme', color?: string | null | undefined, scolor?: string | null | undefined, font?: string | null | undefined, icon?: string | null | undefined, darkMode?: string | null | undefined } | null | undefined } } };
 
 export type GetGlobalListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetGlobalListQuery = { __typename?: 'Query', getGlobalList: { __typename?: 'GlobalConnection', totalCount: number, edges?: Array<{ __typename?: 'GlobalConnectionEdges', node?: { __typename?: 'GlobalDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Global', header?: { __typename: 'GlobalHeader', color?: string | null | undefined, email?: string | null | undefined, donate?: string | null | undefined, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined, posts?: Array<{ __typename: 'GlobalHeaderPosts', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined, footer?: { __typename: 'GlobalFooter', color?: string | null | undefined, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null | undefined, twitter?: string | null | undefined, instagram?: string | null | undefined, pinterest?: string | null | undefined, gmail?: string | null | undefined } | null | undefined } | null | undefined, theme?: { __typename: 'GlobalTheme', color?: string | null | undefined, scolor?: string | null | undefined, font?: string | null | undefined, icon?: string | null | undefined, darkMode?: string | null | undefined } | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetGlobalListQuery = { __typename?: 'Query', getGlobalList: { __typename?: 'GlobalConnection', totalCount: number, edges?: Array<{ __typename?: 'GlobalConnectionEdges', node?: { __typename?: 'GlobalDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Global', verse?: { __typename: 'GlobalVerse', body?: string | null | undefined, author?: string | null | undefined } | null | undefined, header?: { __typename: 'GlobalHeader', color?: string | null | undefined, email?: string | null | undefined, donate?: string | null | undefined, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined, posts?: Array<{ __typename: 'GlobalHeaderPosts', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined, footer?: { __typename: 'GlobalFooter', color?: string | null | undefined, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null | undefined, twitter?: string | null | undefined, instagram?: string | null | undefined, pinterest?: string | null | undefined, gmail?: string | null | undefined } | null | undefined } | null | undefined, theme?: { __typename: 'GlobalTheme', color?: string | null | undefined, scolor?: string | null | undefined, font?: string | null | undefined, icon?: string | null | undefined, darkMode?: string | null | undefined } | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
 export type GetAuthorsDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -756,6 +769,11 @@ export const PostsPartsFragmentDoc = gql`
     `;
 export const GlobalPartsFragmentDoc = gql`
     fragment GlobalParts on Global {
+  verse {
+    __typename
+    body
+    author
+  }
   header {
     __typename
     icon {
