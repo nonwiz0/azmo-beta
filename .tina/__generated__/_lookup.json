@@ -123,5 +123,12 @@
     "resolveType": "multiCollectionDocument",
     "createDocument": "create",
     "updateDocument": "update"
+  },
+  "PostsAttachment": {
+    "type": "PostsAttachment",
+    "resolveType": "unionData",
+    "typeMap": {
+      "attachs": "PostsAttachmentAttachs"
+    }
   }
 }

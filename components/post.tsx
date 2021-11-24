@@ -4,6 +4,15 @@ import { Container } from "./container";
 import { Section } from "./section";
 import { ThemeContext } from "./theme";
 import format from "date-fns/format";
+import Minisection from "./mdx/minisection";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { Verse } from "./blocks/verse";
+
+const components = {
+  Minisection: (data) => {
+    return <Minisection section={data} />;
+  },
+};
 
 export const Post = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -19,9 +28,7 @@ export const Post = ({ data }) => {
       "from-orange-300 to-orange-600 dark:from-orange-200 dark:to-orange-500",
     yellow:
       "from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500",
-    wgray:
-      "from-wgray-400 to-wgray-500 dark:from-wgray-300 dark:to-wgray-500",
-
+    wgray: "from-wgray-400 to-wgray-500 dark:from-wgray-300 dark:to-wgray-500",
   };
   /**
    * Formats date field value to be more readable.
@@ -31,57 +38,46 @@ export const Post = ({ data }) => {
     const date = data.date ? new Date(data.date) : "";
     formattedDate = date ? format(date, "MMM dd, yyyy") : date;
   }
+  console.log("Data at post", data);
 
   return (
-    <Section className="flex-1">
-      <Container className={`flex-1 max-w-4xl pb-2`} size="large">
-        <h2
-          className={`w-full block relative	mb-8 text-6xl leading-tight font-extrabold tracking-normal text-center title-font`}
-        >
-          <span
-            className={`bg-clip-text inline-block text-transparent bg-gradient-to-r ${
-              titleColorClasses[theme.color]
-            }`}
+    <Section>
+      <Container size="medium">
+        <div className="flex-row md:flex">
+          <div>
+          <h1
+            className={`text-5xl leading-tight font-extrabold tracking-normal text-center md:text-left title-font`}
           >
-            {data.title}
-          </span>
-        </h2>
+            <span className={`bg-clip-text inline-block text-transparent bg-gradient-to-r ${
+                titleColorClasses[theme.color]
+              }`}>{data.title}{" "}
+            </span>{" "}
+          </h1>
+            <div className="mt-4">
 
-        <div className="flex items-center justify-center mb-16">
-          {data.author && (
-            <>
-              <div className="flex-shrink-0 mr-4">
-                <img
-                  className="object-cover rounded-full h-14 w-14 shadow-sm"
-                  src={data.author.data.avatar}
-                  alt={data.author.data.name}
-                />
-              </div>
-              <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                {data.author.data.name}
-              </p>
-              <span className="mx-2 font-bold text-gray-200 dark:text-gray-500">
-                —
-              </span>
-            </>
+              <h2 className="relative z-20 inline-block px-3 py-1 mb-4 font-bold tracking-wide text-md title-font">
+                {data.type} / {data.category}
+              <span className="absolute top-0 left-0 w-full h-full rounded-full -z-1 bg-current opacity-7"></span>
+            </h2>
+            </div>
+
+            <p className="py-5 prose prose-lg"> {data.excerpt} </p>
+          </div>
+
+          {data.heroImg && (
+            <div className="flex justify-center max-w-md px-6 mx-auto md:w-2/3 lg:w-1/3">
+              <img
+                src={data.heroImg}
+                className="block object-cover h-auto max-w-full mx-auto mb-14 rounded-md"
+              />
+            </div>
           )}
-          <p className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150">
-            {formattedDate}
-          </p>
         </div>
       </Container>
-      {data.heroImg && (
-        <div className="flex justify-center max-w-4xl px-6 mx-auto lg:max-w-6xl">
-          <img
-            src={data.heroImg}
-            className="block object-cover h-auto max-w-full mx-auto mb-14 rounded-md"
-            style={{ maxHeight: "80vh" }}
-          />
-        </div>
-      )}
+      <Verse data={{}} />
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="w-full prose dark:prose-dark max-w-none">
-          <Markdown>{data.body}</Markdown>
+          <TinaMarkdown components={components} content={data.body} />
         </div>
       </Container>
     </Section>

@@ -2241,6 +2241,44 @@
     typescript "^4.3.5"
     webfontloader "1.6.28"
 
+"@tinacms/toolkit@0.56.0":
+  version "0.56.0"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.0.tgz#e399d89238fe29266855b7e031a8e8c6a344e53a"
+  integrity sha512-dtcfnjQ0aPVNKDK1UfOgW2LX33h7Rh/MXSR7aMw5UhtizXJ3YCtaiMLQmqA6w98yMsBoEqddQ//hjrku+ioOXw==
+  dependencies:
+    "@sambego/storybook-styles" "^1.0.0"
+    "@types/atob" "^2.1.2"
+    "@types/cors" "^2.8.12"
+    "@types/express" "^4.17.13"
+    "@types/multer" "^1.4.7"
+    "@types/prop-types" "^15.7.4"
+    "@udecode/plate" "^6.0.0"
+    "@udecode/plate-md-serializer" "^6.0.0"
+    atob "2.1.2"
+    color-string "^1.5.3"
+    cors "^2.8.5"
+    express "^4.17.1"
+    final-form "^4.20.2"
+    final-form-arrays "^3.0.1"
+    lodash.get "^4.4.2"
+    moment ">=2 <=3"
+    multer "1.4.2"
+    path "^0.12.7"
+    prop-types "15.7.2"
+    react-beautiful-dnd "^11.0.5"
+    react-color "^2.17.3"
+    react-datetime "^2.16.3"
+    react-dropzone "10.1.8"
+    react-final-form "^6.3.0"
+    react-icons "^4.3.1"
+    simple-git "1.126.0"
+    slate "^0.66.0"
+    slate-history "^0.66.0"
+    slate-hyperscript "^0.66.0"
+    slate-react "^0.66.0"
+    typescript "^4.3.5"
+    webfontloader "1.6.28"
+
 "@tippyjs/react@^4.2.0", "@tippyjs/react@^4.2.5":
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/@tippyjs/react/-/react-4.2.6.tgz#971677a599bf663f20bb1c60a62b9555b749cc71"
@@ -12213,17 +12251,17 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinacms@^0.58.0:
-  version "0.58.1"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.58.1.tgz#4792efc1b514ee9653fbeaf652e3dc33f4a9fdb0"
-  integrity sha512-LoEY/2ggAVgm9m19E4NbrkwvUdXtX6oPTT3Pqe98dsqYhzZbqjr2f7lZuMFN9s5RcyMcldC/iOj2Emvqdc8Lwg==
+tinacms@^0.59.0:
+  version "0.59.0"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-0.59.0.tgz#427dbb9617e339a60af9b05819273db75a23e2cd"
+  integrity sha512-6njSYVYn/H/ZqrSEyb97pWUVdp8dk0i0Wvx9eaTEKstvm17hA8fw+gH3ai+I0c+j6fu68Lc++M8BrPnuQZOjGg==
   dependencies:
     "@graphql-codegen/core" "^1.15.4"
     "@graphql-codegen/typescript" "^1.15.4"
     "@graphql-codegen/typescript-operations" "^1.15.4"
     "@headlessui/react" "^1.4.1"
     "@heroicons/react" "^1.0.4"
-    "@tinacms/toolkit" "0.55.4"
+    "@tinacms/toolkit" "0.56.0"
     "@xstate/react" "^1.1.0"
     codemirror "^5.55.0"
     cors "^2.8.5"

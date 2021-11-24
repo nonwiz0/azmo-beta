@@ -26,7 +26,7 @@ const GoToEditPage: React.FC = () => {
           <p className="mb-10 text-lg">
             Thanks for using{" "}
             <a
-              className="cursor-pointer text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-500 transition-all ease-out duration-150"
+              className="cursor-pointer text-wgray-600 dark:text-wgray-400 hover:underline hover:text-wgray-500 transition-all ease-out duration-150"
               href="https://tina.io"
             >
               TinaCMS!

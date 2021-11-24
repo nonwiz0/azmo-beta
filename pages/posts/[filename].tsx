@@ -25,6 +25,9 @@ export const getStaticProps = async ({ params }) => {
         getPostsDocument(relativePath: $relativePath) {
           data {
             title
+            type
+            excerpt
+            category
             author {
               ... on AuthorsDocument {
                 data {
@@ -36,6 +39,11 @@ export const getStaticProps = async ({ params }) => {
             date
             heroImg
             body
+            attachment {
+              link
+              attImage
+              description
+            }
           }
         }
       }

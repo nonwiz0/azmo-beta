@@ -1,7 +1,4 @@
 import React from "react";
-import Markdown from "react-markdown";
-import { Container } from "../container";
-import { Section } from "../section";
 
 export const Verse = ({ data }) => {
   return (
@@ -10,31 +7,17 @@ export const Verse = ({ data }) => {
         <div className="w-full mb-1">
           <p className="text-sm text-center">
             <span className="text-gray-50">&#10077;</span>
-            {data.body}
+            Let Love and Kindness be the motivation behind all that you do!
             <span className="text-gray-50">&#10078;</span>
           </p>
         </div>
         <div className="w-full">
-          <p className="text-xs text-right">
-            {data.author}
+          <p className="text-xs text-center md:text-right">
+            1 Corinthians 16:14
           </p>
         </div>
       </div>
     </div>
   )
 };
-
-
-    {/* <Section color={data.color}> */}
-    {/*   <Container */}
-    {/*     size="xsmall" */}
-    {/*     className={`w-full ${ */}
-    {/*       data.color === "primary" ? `bg-wgray-500 text-wgray-50` : `` */}
-    {/*     }`} */}
-    {/*   > */}
-    {/*     <Markdown>{data.body}</Markdown> */}
-    {/*     <p className="mr-10 text-right">{data.author}</p> */}
-    {/*   </Container> */}
-    {/* </Section> */}
-
 

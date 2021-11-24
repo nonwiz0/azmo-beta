@@ -6,8 +6,20 @@ category: lifehack
 date: '2021-11-19T14:56:00.000Z'
 heroImg: 'http://res.cloudinary.com/azmo/image/upload/v1637292688/vlog_room_fpu9uu.png'
 excerpt: afwefaewfawea
+attachment:
+  - {}
 ---
 
-
-
 ewfawefawefwefawefawefawefawfawef
+
+<Minisection
+  first="Hey there, I'm just testing out about markdown how it looks like.
+
+We have made the developer experience a breeze, you can check out our [documentation](https://tina.io/docs/mdx/) or check out the steps to start using MDX :
+
+We have made the developer experience a breeze, you can check out our [documentation](https://tina.io/docs/mdx/) or check out the steps to start using MDX :
+
+We have made the developer experience a breeze, you can check out our [documentation](https://tina.io/docs/mdx/) or check out the steps to start using MDX :"
+  last="![](http://res.cloudinary.com/azmo/image/upload/v1637292688/vlog_journey_yen6eo.png)sdasdasdasd"
+/>
+

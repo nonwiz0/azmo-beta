@@ -20,9 +20,10 @@ export const Posts = ({ data }) => {
     orange: "group-hover:text-orange-600 dark:group-hover:text-orange-300",
     yellow: "group-hover:text-yellow-500 dark:group-hover:text-yellow-300",
   };
+  console.log("All Posts Component Posts", data);
 
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-5">
+    <div className="flex flex-row flex-wrap justify-center gap-5 md:gap-10">
       {data.map((postData) => {
         const post = postData.node;
         /**

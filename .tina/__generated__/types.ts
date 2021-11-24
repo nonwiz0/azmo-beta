@@ -209,7 +209,7 @@ export type Posts = {
   excerpt?: Maybe<Scalars['String']>;
   note?: Maybe<Scalars['String']>;
   attachment?: Maybe<Array<Maybe<PostsAttachment>>>;
-  body?: Maybe<Scalars['String']>;
+  body?: Maybe<Scalars['JSON']>;
 };
 
 export type PostsDocument = Node & Document & {
@@ -555,7 +555,7 @@ export type PostsMutation = {
   excerpt?: InputMaybe<Scalars['String']>;
   note?: InputMaybe<Scalars['String']>;
   attachment?: InputMaybe<Array<InputMaybe<PostsAttachmentMutation>>>;
-  body?: InputMaybe<Scalars['String']>;
+  body?: InputMaybe<Scalars['JSON']>;
 };
 
 export type GlobalVerseMutation = {
@@ -688,7 +688,7 @@ export type PagesMutation = {
   blocks?: InputMaybe<Array<InputMaybe<PagesBlocksMutation>>>;
 };
 
-export type PostsPartsFragment = { __typename?: 'Posts', title?: string | null | undefined, type?: string | null | undefined, category?: string | null | undefined, date?: string | null | undefined, heroImg?: string | null | undefined, excerpt?: string | null | undefined, note?: string | null | undefined, body?: string | null | undefined, author?: { __typename?: 'AuthorsDocument', id: string } | null | undefined, attachment?: Array<{ __typename: 'PostsAttachment', link?: string | null | undefined, attImage?: string | null | undefined, description?: string | null | undefined } | null | undefined> | null | undefined };
+export type PostsPartsFragment = { __typename?: 'Posts', title?: string | null | undefined, type?: string | null | undefined, category?: string | null | undefined, date?: string | null | undefined, heroImg?: string | null | undefined, excerpt?: string | null | undefined, note?: string | null | undefined, body?: any | null | undefined, author?: { __typename?: 'AuthorsDocument', id: string } | null | undefined, attachment?: Array<{ __typename: 'PostsAttachment', link?: string | null | undefined, attImage?: string | null | undefined, description?: string | null | undefined } | null | undefined> | null | undefined };
 
 export type GlobalPartsFragment = { __typename?: 'Global', verse?: { __typename: 'GlobalVerse', body?: string | null | undefined, author?: string | null | undefined } | null | undefined, header?: { __typename: 'GlobalHeader', color?: string | null | undefined, email?: string | null | undefined, donate?: string | null | undefined, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined, posts?: Array<{ __typename: 'GlobalHeaderPosts', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null | undefined, label?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined, footer?: { __typename: 'GlobalFooter', color?: string | null | undefined, social?: { __typename: 'GlobalFooterSocial', facebook?: string | null | undefined, twitter?: string | null | undefined, instagram?: string | null | undefined, pinterest?: string | null | undefined, gmail?: string | null | undefined } | null | undefined } | null | undefined, theme?: { __typename: 'GlobalTheme', color?: string | null | undefined, scolor?: string | null | undefined, font?: string | null | undefined, icon?: string | null | undefined, darkMode?: string | null | undefined } | null | undefined };
 
@@ -701,12 +701,12 @@ export type GetPostsDocumentQueryVariables = Exact<{
 }>;
 
 
-export type GetPostsDocumentQuery = { __typename?: 'Query', getPostsDocument: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, type?: string | null | undefined, category?: string | null | undefined, date?: string | null | undefined, heroImg?: string | null | undefined, excerpt?: string | null | undefined, note?: string | null | undefined, body?: string | null | undefined, author?: { __typename?: 'AuthorsDocument', id: string } | null | undefined, attachment?: Array<{ __typename: 'PostsAttachment', link?: string | null | undefined, attImage?: string | null | undefined, description?: string | null | undefined } | null | undefined> | null | undefined } } };
+export type GetPostsDocumentQuery = { __typename?: 'Query', getPostsDocument: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, type?: string | null | undefined, category?: string | null | undefined, date?: string | null | undefined, heroImg?: string | null | undefined, excerpt?: string | null | undefined, note?: string | null | undefined, body?: any | null | undefined, author?: { __typename?: 'AuthorsDocument', id: string } | null | undefined, attachment?: Array<{ __typename: 'PostsAttachment', link?: string | null | undefined, attImage?: string | null | undefined, description?: string | null | undefined } | null | undefined> | null | undefined } } };
 
 export type GetPostsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsListQuery = { __typename?: 'Query', getPostsList: { __typename?: 'PostsConnection', totalCount: number, edges?: Array<{ __typename?: 'PostsConnectionEdges', node?: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, type?: string | null | undefined, category?: string | null | undefined, date?: string | null | undefined, heroImg?: string | null | undefined, excerpt?: string | null | undefined, note?: string | null | undefined, body?: string | null | undefined, author?: { __typename?: 'AuthorsDocument', id: string } | null | undefined, attachment?: Array<{ __typename: 'PostsAttachment', link?: string | null | undefined, attImage?: string | null | undefined, description?: string | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetPostsListQuery = { __typename?: 'Query', getPostsList: { __typename?: 'PostsConnection', totalCount: number, edges?: Array<{ __typename?: 'PostsConnectionEdges', node?: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, type?: string | null | undefined, category?: string | null | undefined, date?: string | null | undefined, heroImg?: string | null | undefined, excerpt?: string | null | undefined, note?: string | null | undefined, body?: any | null | undefined, author?: { __typename?: 'AuthorsDocument', id: string } | null | undefined, attachment?: Array<{ __typename: 'PostsAttachment', link?: string | null | undefined, attImage?: string | null | undefined, description?: string | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
 export type GetGlobalDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];

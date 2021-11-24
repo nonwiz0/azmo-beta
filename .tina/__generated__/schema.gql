@@ -101,7 +101,7 @@ type Posts {
   excerpt: String
   note: String
   attachment: [PostsAttachment]
-  body: String
+  body: JSON
 }
 
 type PostsDocument implements Node & Document {
@@ -345,7 +345,7 @@ input PostsMutation {
   excerpt: String
   note: String
   attachment: [PostsAttachmentMutation]
-  body: String
+  body: JSON
 }
 
 input GlobalVerseMutation {

@@ -425,6 +425,7 @@ export default defineSchema({
   collections: [
     {
       label: "All Posts",
+      format: "mdx",
       name: "posts",
       path: "content/posts",
       fields: [
@@ -519,12 +520,34 @@ export default defineSchema({
           ]
         },
         {
-          type: "string",
+          type: "rich-text",
           label: "Body",
-          ui: {
-            component: "markdown",
-          },
           name: "body",
+          templates: [
+            {
+              name: 'Minisection',
+              label: "2 Columns",
+              ui: {},
+              fields: [
+                {
+                  name: "first",
+                  label: "First Section",
+                  type: "string",
+                  ui: {
+                    component: "markdown"
+                  }
+                },
+                {
+                  name: "last",
+                  label: "Last Section",
+                  type: "string",
+                  ui: {
+                    component: "markdown"
+                  }
+                }
+              ],
+            }
+          ],
           isBody: true,
         },
         
