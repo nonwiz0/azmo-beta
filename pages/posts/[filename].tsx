@@ -48,7 +48,7 @@ export const getStaticProps = async ({ params }) => {
         }
       }
     `,
-    variables: { relativePath: `${params.filename}.md` },
+    variables: { relativePath: `${params.filename}.mdx` },
   })) as { data: { getPostsDocument: PostsDocument } };
   return {
     props: {
@@ -84,7 +84,7 @@ export const getStaticPaths = async () => {
     paths: postsListData.getPostsList.edges.map((post) => ({
       params: { filename: post.node.sys.filename },
     })),
-    fallback:'blocking',
+    fallback: false,
   };
 };
 

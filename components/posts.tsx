@@ -5,8 +5,11 @@ import { BsArrowRight } from "react-icons/bs";
 import { ThemeContext } from "./theme";
 import format from "date-fns/format";
 
-export const truncate = (str, length) =>
-  str.length > length ? str.substring(0, length) + "..." : str;
+export const truncate = (str, length) => {
+  if (str === undefined) 
+    return "";
+  return str.length > length ? str.substring(0, length) + "..." : str;
+  }
 
 export const Posts = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -20,10 +23,9 @@ export const Posts = ({ data }) => {
     orange: "group-hover:text-orange-600 dark:group-hover:text-orange-300",
     yellow: "group-hover:text-yellow-500 dark:group-hover:text-yellow-300",
   };
-  console.log("All Posts Component Posts", data);
 
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-5 md:gap-10">
+    <div className="flex flex-row flex-wrap justify-center mx-auto md:w-4/5 gap-5 md:gap-10 lg:gap-20">
       {data.map((postData) => {
         const post = postData.node;
         /**

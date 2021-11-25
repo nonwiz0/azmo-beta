@@ -444,17 +444,19 @@ export default defineSchema({
           type: "string",
           label: "Type",
           name: "type",
+          ui: {
+            defaultItem: {
+              type: "blog",
+            },
+          },
           options: [
-            { label: "Blog", value: "blog"},
+            { label: "Blog", value: "blog" },
             { label: "Vlog", value: "vlog" },
             { label: "Storybook", value: "storybook" },
             { label: "collection", value: "collection" },
           ],
-          ui: {
-            defaultItem: {label: "Blog", value: "blog"}
-          }
         },
-       
+
         {
           type: "string",
           label: "Category",
@@ -494,18 +496,19 @@ export default defineSchema({
           type: "string",
           label: "Author's Note",
           name: "note",
-          ui: { component: "textarea" }
+          ui: { component: "textarea" },
         },
         {
           type: "object",
           label: "Attachment",
           name: "attachment",
           list: true,
+
           fields: [
             {
               type: "string",
               label: "Link",
-              name: "link"
+              name: "link",
             },
             {
               type: "image",
@@ -516,17 +519,39 @@ export default defineSchema({
               type: "string",
               label: "Title / Description",
               name: "description",
-            }
-          ]
+            },
+          ],
         },
         {
           type: "rich-text",
           label: "Body",
           name: "body",
           templates: [
+
             {
-              name: 'Minisection',
-              label: "2 Columns",
+              name: "Attachment",
+              label: "Attachment",
+              fields: [
+                { label: "Link", name: "link", type: "string" },
+                { label: "Image", name: "image", type: "image" },
+                { label: "Content", name: "content", type: "string" },
+              ],
+            },
+             {
+              name: "AttachCols",
+              label: "Attachment with 2 Columns",
+              fields: [
+                { label: "Link #1", name: "link", type: "string" },
+                { label: "Image #1", name: "image", type: "image" },
+                { label: "Content #1", name: "content", type: "string" },
+                 { label: "Link #2", name: "link1", type: "string" },
+                { label: "Image #2", name: "image1", type: "image" },
+                { label: "Content #2", name: "content1", type: "string" },
+              ],
+            },
+            {
+              name: "Minisection",
+              label: "2 Columns - Text | Image",
               ui: {},
               fields: [
                 {
@@ -534,23 +559,33 @@ export default defineSchema({
                   label: "First Section",
                   type: "string",
                   ui: {
-                    component: "markdown"
-                  }
+                    component: "markdown",
+                  },
                 },
                 {
                   name: "last",
-                  label: "Last Section",
+                  label: "Image",
+                  type: "image",
+                },
+                {
+                  name: "caption",
+                  label: "Image caption",
                   type: "string",
-                  ui: {
-                    component: "markdown"
-                  }
-                }
+                },
+                {
+                  name: "position",
+                  label: "Columns Layout",
+                  type: "string",
+                  options: [
+                    { label: "Text | Image", value: "float-right" },
+                    { label: "Image | Text", value: "float-left" },
+                  ],
+                },
               ],
-            }
+            },
           ],
           isBody: true,
         },
-        
       ],
     },
     {
@@ -572,8 +607,8 @@ export default defineSchema({
               type: "string",
               label: "Author",
               name: "author",
-            }
-          ]
+            },
+          ],
         },
         {
           type: "object",

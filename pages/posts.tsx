@@ -16,29 +16,35 @@ export default function HomePage(
   const posts = props.data.getPostsList.edges;
   let filteredPosts = posts;
   const allCategories = posts.map((item) => item.node.values.type);
-  if (allCategories.indexOf(type) > -1) {
-    filteredPosts = posts.filter((item) => item.node.values.type === type);
-  }
+  console.log(allCategories);
+
+/*   if (allCategories.indexOf(type) > -1) { */
+/*     filteredPosts = posts.filter((item) => item.node.values.type === type); */
+/*   } */
+
   const [allPosts, setAllPosts] = useState(filteredPosts);
+  console.log(filteredPosts);
   const subcategories = [
-    { name: "All Category" },
-    ...filteredPosts.map((item) => ({
-      name: item.node.values.category.replace(/\w\S*/g, (w) =>
-        w.replace(/^\w/, (c) => c.toUpperCase())
-      ),
-    })),
-  ];
+    { name: "asdf" }
+  ]
+  /* const subcategories = [ */
+  /*   { name: "All Category" }, */
+  /*   ...filteredPosts.map((item) => ({ */
+  /*       w.replace(/^\w/, c => c.toUpperCase()) */
+  /*     ), */
+  /*   })), */
+  /* ]; */
 
   const [selected, setSelected] = useState(subcategories[0]);
 
-  useEffect(() => {
-    console.log("Cateogry picked")
-    if (selected.name === "All Category")
-      setAllPosts(filteredPosts);
-    else {
-      setAllPosts(filteredPosts.filter(item => item.node.values.category === selected.name.toLowerCase()));
-    }
-  }, [selected.name])
+/*   useEffect(() => { */
+/*     console.log("Cateogry picked") */
+/*     if (selected.name === "All Category") */
+/*       setAllPosts(filteredPosts); */
+/*     else { */
+/*       setAllPosts(filteredPosts.filter(item => item.node.values.category === selected.name.toLowerCase())); */
+/*     } */
+/*   }, [selected.name]) */
 
   const verse = props.data.getGlobalDocument.data.verse;
   const data = {
@@ -118,7 +124,7 @@ export default function HomePage(
       </div>
 
       <Section className="flex-1 p-5 mb-10">
-        <div className="flex flex-row justify-between w-full py-5 mx-auto md:w-3/4">
+        <div className="flex flex-row justify-between py-5 mx-auto md:w-3/4">
           <div>
             <h4
               className={`mb-5 text-3xl font-extrabold tracking-normal leading-tight title-font`}
@@ -131,7 +137,7 @@ export default function HomePage(
             </h4>
           </div>
           <div>
-            <div className="">
+            <div className="-mt-1">
               <Listbox value={selected} onChange={setSelected}>
                 <div className="relative z-20 mt-1">
                   <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
@@ -166,7 +172,7 @@ export default function HomePage(
                           {({ selected, active }) => (
                             <>
                               <span
-                                className={`${
+                                className={`capitalize ${
                                   selected ? "font-medium" : "font-normal"
                                 } block truncate`}
                               >
@@ -177,7 +183,7 @@ export default function HomePage(
                                   className={`${
                                     active ? "text-amber-600" : "text-amber-600"
                                   }
-                                absolute inset-y-0 left-0 flex items-center pl-3`}
+                                absolute capitalize inset-y-0 left-0 flex items-center pl-3`}
                                 >
                                   <CheckIcon
                                     className="w-5 h-5"
@@ -235,7 +241,6 @@ export const getStaticProps = async () => {
     `,
     variables: {},
   })) as { data: { getPostsList: PostsConnection } };
-
   return {
     props: {
       ...tinaProps,

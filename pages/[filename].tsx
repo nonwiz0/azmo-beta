@@ -67,7 +67,7 @@ export const getStaticProps = async ({ params }) => {
         }
       }
   `,
-    variables: { relativePath: `${params.filename}.md` },
+    variables: { relativePath: `${params.filename}.mdx` },
   })) as { data: { getPagesDocument: PagesDocument } };
 
   return {

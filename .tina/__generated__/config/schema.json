@@ -23,6 +23,11 @@
           "type": "string",
           "label": "Type",
           "name": "type",
+          "ui": {
+            "defaultItem": {
+              "type": "blog"
+            }
+          },
           "options": [
             {
               "label": "Blog",
@@ -40,13 +45,7 @@
               "label": "collection",
               "value": "collection"
             }
-          ],
-          "ui": {
-            "defaultItem": {
-              "label": "Blog",
-              "value": "blog"
-            }
-          }
+          ]
         },
         {
           "type": "string",
@@ -138,8 +137,65 @@
           "name": "body",
           "templates": [
             {
+              "name": "Attachment",
+              "label": "Attachment",
+              "fields": [
+                {
+                  "label": "Link",
+                  "name": "link",
+                  "type": "string"
+                },
+                {
+                  "label": "Image",
+                  "name": "image",
+                  "type": "image"
+                },
+                {
+                  "label": "Content",
+                  "name": "content",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "AttachCols",
+              "label": "Attachment with 2 Columns",
+              "fields": [
+                {
+                  "label": "Link #1",
+                  "name": "link",
+                  "type": "string"
+                },
+                {
+                  "label": "Image #1",
+                  "name": "image",
+                  "type": "image"
+                },
+                {
+                  "label": "Content #1",
+                  "name": "content",
+                  "type": "string"
+                },
+                {
+                  "label": "Link #2",
+                  "name": "link1",
+                  "type": "string"
+                },
+                {
+                  "label": "Image #2",
+                  "name": "image1",
+                  "type": "image"
+                },
+                {
+                  "label": "Content #2",
+                  "name": "content1",
+                  "type": "string"
+                }
+              ]
+            },
+            {
               "name": "Minisection",
-              "label": "2 Columns",
+              "label": "2 Columns - Text | Image",
               "ui": {},
               "fields": [
                 {
@@ -152,11 +208,28 @@
                 },
                 {
                   "name": "last",
-                  "label": "Last Section",
+                  "label": "Image",
+                  "type": "image"
+                },
+                {
+                  "name": "caption",
+                  "label": "Image caption",
+                  "type": "string"
+                },
+                {
+                  "name": "position",
+                  "label": "Columns Layout",
                   "type": "string",
-                  "ui": {
-                    "component": "markdown"
-                  }
+                  "options": [
+                    {
+                      "label": "Text | Image",
+                      "value": "float-right"
+                    },
+                    {
+                      "label": "Image | Text",
+                      "value": "float-left"
+                    }
+                  ]
                 }
               ]
             }
