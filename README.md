@@ -17,6 +17,7 @@ This site is powered by TinaCMS and Tailwind.
 
 ### November 2021 
 
+- [27] Update Verse block to display from Global Data [Extra.verse]
 - [26] Update 2 columns components into one side text / another is image, create two more mdx components for attachment file
 - [24] Create 2 columns component for MDX
 - [24] Update from Markdown to MDX in order to embedded components within markdown.

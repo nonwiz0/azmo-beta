@@ -1,6 +1,5 @@
 
 export default function Attachment({ section }) {
-  console.log("section", section);
   return (
     <>
         <div className="m-1">
@@ -14,7 +13,7 @@ export default function Attachment({ section }) {
                   {section.content}
                 </span>
                 <div className="flex justify-end">
-                    <a href={section.link ? section.link : ""} target="_blank">
+                  <a href={`${section.link && section.link.indexOf("http") > -1 ? section.link : "https://" + section.link}`} target="_blank">
                   <button className="px-2 py-1 mt-4 text-xs font-bold text-white uppercase rounded bg-wgray-500 transition-colors duration-200 transform hover:bg-wgray-600 focus:outline-none focus:bg-wgray-700">
                     Open
                   </button>

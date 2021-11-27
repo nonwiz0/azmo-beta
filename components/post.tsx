@@ -65,7 +65,7 @@ export const Post = ({ data }) => {
               </span>{" "}
             </h1>
             <div className="mt-4 text-center md:text-left">
-              <h2 className="relative z-20 inline-block px-3 py-1 mb-4 font-bold tracking-wide text-md title-font">
+              <h2 className="relative z-20 inline-block px-3 py-1 mb-1 font-bold tracking-wide text-md title-font">
                 {data.type} / {data.category}
                 <span className="absolute top-0 left-0 w-full h-full rounded-full -z-1 bg-current opacity-7"></span>
               </h2>
@@ -93,7 +93,7 @@ export const Post = ({ data }) => {
           )}
         </div>
       </Container>
-      <Verse data={{}} />
+      <Verse />
       <Container className={`flex-1 pt-4`} size="large">
         <div className="w-full prose dark:prose-dark max-w-none">
           <TinaMarkdown components={components} content={data.body} />

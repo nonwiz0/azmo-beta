@@ -253,8 +253,6 @@ const verseBlockSchema: TinaTemplate = {
   label: "Verse",
   ui: {
     defaultItem: {
-      body: "Let Love and Kindness be the motivation behind all that you do",
-      author: "1 Corinthians 16:14",
     },
   },
   fields: [
@@ -265,21 +263,6 @@ const verseBlockSchema: TinaTemplate = {
       },
       label: "Body",
       name: "body",
-    },
-    {
-      type: "string",
-      label: "Author",
-      name: "author",
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
-      ],
     },
   ],
 };
@@ -485,6 +468,12 @@ export default defineSchema({
           label: "Hero Image",
         },
         {
+          type: "image",
+          name: "socialImg",
+          label: "Social Media Image",
+        },
+
+        {
           type: "string",
           label: "Excerpt",
           ui: {
@@ -493,41 +482,10 @@ export default defineSchema({
           name: "excerpt",
         },
         {
-          type: "string",
-          label: "Author's Note",
-          name: "note",
-          ui: { component: "textarea" },
-        },
-        {
-          type: "object",
-          label: "Attachment",
-          name: "attachment",
-          list: true,
-
-          fields: [
-            {
-              type: "string",
-              label: "Link",
-              name: "link",
-            },
-            {
-              type: "image",
-              label: "Image",
-              name: "attImage",
-            },
-            {
-              type: "string",
-              label: "Title / Description",
-              name: "description",
-            },
-          ],
-        },
-        {
           type: "rich-text",
           label: "Body",
           name: "body",
           templates: [
-
             {
               name: "Attachment",
               label: "Attachment",
@@ -537,14 +495,14 @@ export default defineSchema({
                 { label: "Content", name: "content", type: "string" },
               ],
             },
-             {
+            {
               name: "AttachCols",
               label: "Attachment with 2 Columns",
               fields: [
                 { label: "Link #1", name: "link", type: "string" },
                 { label: "Image #1", name: "image", type: "image" },
                 { label: "Content #1", name: "content", type: "string" },
-                 { label: "Link #2", name: "link1", type: "string" },
+                { label: "Link #2", name: "link1", type: "string" },
                 { label: "Image #2", name: "image1", type: "image" },
                 { label: "Content #2", name: "content1", type: "string" },
               ],
@@ -595,18 +553,25 @@ export default defineSchema({
       fields: [
         {
           type: "object",
-          label: "Bible Verse",
-          name: "verse",
+          label: "Bible Verse & Extra",
+          name: "extra",
           fields: [
             {
-              type: "string",
-              label: "Text",
-              name: "body",
-            },
-            {
-              type: "string",
-              label: "Author",
-              name: "author",
+              type: "object",
+              label: "Bible Verse",
+              name: "verse",
+              fields: [
+                {
+                  type: "string",
+                  label: "Text",
+                  name: "body",
+                },
+                {
+                  type: "string",
+                  label: "Author",
+                  name: "author",
+                },
+              ],
             },
           ],
         },

@@ -85,12 +85,6 @@ union DocumentNode = PostsDocument | GlobalDocument | AuthorsDocument | PagesDoc
 
 union PostsAuthorDocument = AuthorsDocument
 
-type PostsAttachment {
-  link: String
-  attImage: String
-  description: String
-}
-
 type Posts {
   title: String
   author: PostsAuthorDocument
@@ -98,9 +92,8 @@ type Posts {
   category: String
   date: String
   heroImg: String
+  socialImg: String
   excerpt: String
-  note: String
-  attachment: [PostsAttachment]
   body: JSON
 }
 
@@ -124,9 +117,13 @@ type PostsConnection implements Connection {
   edges: [PostsConnectionEdges]
 }
 
-type GlobalVerse {
+type GlobalExtraVerse {
   body: String
   author: String
+}
+
+type GlobalExtra {
+  verse: GlobalExtraVerse
 }
 
 type GlobalHeaderIcon {
@@ -176,7 +173,7 @@ type GlobalTheme {
 }
 
 type Global {
-  verse: GlobalVerse
+  extra: GlobalExtra
   header: GlobalHeader
   footer: GlobalFooter
   theme: GlobalTheme
@@ -272,8 +269,6 @@ type PagesBlocksContent {
 
 type PagesBlocksVerse {
   body: String
-  author: String
-  color: String
 }
 
 type PagesBlocksTestimonial {
@@ -329,12 +324,6 @@ input DocumentMutation {
   pages: PagesMutation
 }
 
-input PostsAttachmentMutation {
-  link: String
-  attImage: String
-  description: String
-}
-
 input PostsMutation {
   title: String
   author: String
@@ -342,15 +331,18 @@ input PostsMutation {
   category: String
   date: String
   heroImg: String
+  socialImg: String
   excerpt: String
-  note: String
-  attachment: [PostsAttachmentMutation]
   body: JSON
 }
 
-input GlobalVerseMutation {
+input GlobalExtraVerseMutation {
   body: String
   author: String
+}
+
+input GlobalExtraMutation {
+  verse: GlobalExtraVerseMutation
 }
 
 input GlobalHeaderIconMutation {
@@ -400,7 +392,7 @@ input GlobalThemeMutation {
 }
 
 input GlobalMutation {
-  verse: GlobalVerseMutation
+  extra: GlobalExtraMutation
   header: GlobalHeaderMutation
   footer: GlobalFooterMutation
   theme: GlobalThemeMutation
@@ -456,8 +448,6 @@ input PagesBlocksContentMutation {
 
 input PagesBlocksVerseMutation {
   body: String
-  author: String
-  color: String
 }
 
 input PagesBlocksTestimonialMutation {

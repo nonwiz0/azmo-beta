@@ -117,6 +117,15 @@
           ]
         },
         {
+          "type": "image",
+          "name": "socialImg",
+          "label": "Social Media Image",
+          "namespace": [
+            "posts",
+            "socialImg"
+          ]
+        },
+        {
           "type": "string",
           "label": "Excerpt",
           "ui": {
@@ -126,60 +135,6 @@
           "namespace": [
             "posts",
             "excerpt"
-          ]
-        },
-        {
-          "type": "string",
-          "label": "Author's Note",
-          "name": "note",
-          "ui": {
-            "component": "textarea"
-          },
-          "namespace": [
-            "posts",
-            "note"
-          ]
-        },
-        {
-          "type": "object",
-          "label": "Attachment",
-          "name": "attachment",
-          "list": true,
-          "fields": [
-            {
-              "type": "string",
-              "label": "Link",
-              "name": "link",
-              "namespace": [
-                "posts",
-                "attachment",
-                "link"
-              ]
-            },
-            {
-              "type": "image",
-              "label": "Image",
-              "name": "attImage",
-              "namespace": [
-                "posts",
-                "attachment",
-                "attImage"
-              ]
-            },
-            {
-              "type": "string",
-              "label": "Title / Description",
-              "name": "description",
-              "namespace": [
-                "posts",
-                "attachment",
-                "description"
-              ]
-            }
-          ],
-          "namespace": [
-            "posts",
-            "attachment"
           ]
         },
         {
@@ -396,33 +351,47 @@
       "fields": [
         {
           "type": "object",
-          "label": "Bible Verse",
-          "name": "verse",
+          "label": "Bible Verse & Extra",
+          "name": "extra",
           "fields": [
             {
-              "type": "string",
-              "label": "Text",
-              "name": "body",
+              "type": "object",
+              "label": "Bible Verse",
+              "name": "verse",
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Text",
+                  "name": "body",
+                  "namespace": [
+                    "global",
+                    "extra",
+                    "verse",
+                    "body"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Author",
+                  "name": "author",
+                  "namespace": [
+                    "global",
+                    "extra",
+                    "verse",
+                    "author"
+                  ]
+                }
+              ],
               "namespace": [
                 "global",
-                "verse",
-                "body"
-              ]
-            },
-            {
-              "type": "string",
-              "label": "Author",
-              "name": "author",
-              "namespace": [
-                "global",
-                "verse",
-                "author"
+                "extra",
+                "verse"
               ]
             }
           ],
           "namespace": [
             "global",
-            "verse"
+            "extra"
           ]
         },
         {
@@ -1634,10 +1603,7 @@
               "name": "verse",
               "label": "Verse",
               "ui": {
-                "defaultItem": {
-                  "body": "Let Love and Kindness be the motivation behind all that you do",
-                  "author": "1 Corinthians 16:14"
-                }
+                "defaultItem": {}
               },
               "fields": [
                 {
@@ -1652,42 +1618,6 @@
                     "blocks",
                     "verse",
                     "body"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "label": "Author",
-                  "name": "author",
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "verse",
-                    "author"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "label": "Color",
-                  "name": "color",
-                  "options": [
-                    {
-                      "label": "Default",
-                      "value": "default"
-                    },
-                    {
-                      "label": "Tint",
-                      "value": "tint"
-                    },
-                    {
-                      "label": "Primary",
-                      "value": "primary"
-                    }
-                  ],
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "verse",
-                    "color"
                   ]
                 }
               ],

@@ -1,7 +1,9 @@
 {
-  "verse": {
-    "body": "Let Love and Kindness be the motivation behind all that you do!",
-    "author": "1 Corinthians 16:14"
+  "extra": {
+    "verse": {
+      "body": "Let Love and Kindness be the motivation behind all that you do",
+      "author": "1 Corinthians 16:14"
+    }
   },
   "header": {
     "icon": {

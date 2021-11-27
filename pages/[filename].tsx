@@ -35,7 +35,6 @@ export const getStaticProps = async ({ params }) => {
               }
               ... on PagesBlocksVerse{
                 body
-                author
               }
               ... on PagesBlocksContent {
                 body

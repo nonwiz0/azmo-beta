@@ -39,12 +39,7 @@ export const getStaticProps = async ({ params }) => {
             date
             heroImg
             body
-            attachment {
-              link
-              attImage
-              description
-            }
-          }
+           }
         }
       }
     `,

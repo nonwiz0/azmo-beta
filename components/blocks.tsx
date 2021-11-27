@@ -15,7 +15,7 @@ export const Blocks = (props: Pages) => {
               case "PagesBlocksVerse":
                 return (
                   <React.Fragment key={i + block.__typename}>
-                    <Verse data={block} />
+                    <Verse />
                   </React.Fragment>
                 );
          

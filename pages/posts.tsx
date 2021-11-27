@@ -46,7 +46,7 @@ export default function HomePage(
 /*     } */
 /*   }, [selected.name]) */
 
-  const verse = props.data.getGlobalDocument.data.verse;
+  const verse = props.data.getGlobalDocument.data.extra.verse;
   const data = {
     __typename: "PagesBlocksHero",
     tagline: "Post type / subcategories",
