@@ -1600,6 +1600,53 @@
               ]
             },
             {
+              "name": "social",
+              "label": "Social Media - Detail",
+              "ui": {
+                "defaultItem": {}
+              },
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Title",
+                  "name": "title",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "social",
+                    "title"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "description",
+                  "name": "description",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "social",
+                    "description"
+                  ]
+                },
+                {
+                  "type": "image",
+                  "label": "Image",
+                  "name": "socialImg",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "social",
+                    "socialImg"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "social"
+              ]
+            },
+            {
               "name": "verse",
               "label": "Verse",
               "ui": {

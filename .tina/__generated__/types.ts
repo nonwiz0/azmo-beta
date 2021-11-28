@@ -401,6 +401,13 @@ export type PagesBlocksContent = {
   color?: Maybe<Scalars['String']>;
 };
 
+export type PagesBlocksSocial = {
+  __typename?: 'PagesBlocksSocial';
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  socialImg?: Maybe<Scalars['String']>;
+};
+
 export type PagesBlocksVerse = {
   __typename?: 'PagesBlocksVerse';
   body?: Maybe<Scalars['String']>;
@@ -413,7 +420,7 @@ export type PagesBlocksTestimonial = {
   color?: Maybe<Scalars['String']>;
 };
 
-export type PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksVerse | PagesBlocksTestimonial;
+export type PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksSocial | PagesBlocksVerse | PagesBlocksTestimonial;
 
 export type Pages = {
   __typename?: 'Pages';
@@ -656,6 +663,12 @@ export type PagesBlocksContentMutation = {
   color?: InputMaybe<Scalars['String']>;
 };
 
+export type PagesBlocksSocialMutation = {
+  title?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  socialImg?: InputMaybe<Scalars['String']>;
+};
+
 export type PagesBlocksVerseMutation = {
   body?: InputMaybe<Scalars['String']>;
 };
@@ -670,6 +683,7 @@ export type PagesBlocksMutation = {
   hero?: InputMaybe<PagesBlocksHeroMutation>;
   features?: InputMaybe<PagesBlocksFeaturesMutation>;
   content?: InputMaybe<PagesBlocksContentMutation>;
+  social?: InputMaybe<PagesBlocksSocialMutation>;
   verse?: InputMaybe<PagesBlocksVerseMutation>;
   testimonial?: InputMaybe<PagesBlocksTestimonialMutation>;
 };
@@ -684,7 +698,7 @@ export type GlobalPartsFragment = { __typename?: 'Global', extra?: { __typename:
 
 export type AuthorsPartsFragment = { __typename?: 'Authors', name?: string | null | undefined, avatar?: string | null | undefined };
 
-export type PagesPartsFragment = { __typename?: 'Pages', blocks?: Array<{ __typename: 'PagesBlocksHero', tagline?: string | null | undefined, headline?: string | null | undefined, text?: string | null | undefined, color?: string | null | undefined, actions?: Array<{ __typename: 'PagesBlocksHeroActions', label?: string | null | undefined, type?: string | null | undefined, icon?: boolean | null | undefined, link?: string | null | undefined } | null | undefined> | null | undefined, image?: { __typename: 'PagesBlocksHeroImage', src?: string | null | undefined, alt?: string | null | undefined } | null | undefined } | { __typename: 'PagesBlocksFeatures', color?: string | null | undefined, items?: Array<{ __typename: 'PagesBlocksFeaturesItems', title?: string | null | undefined, text?: string | null | undefined, icon?: { __typename: 'PagesBlocksFeaturesItemsIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesBlocksContent', body?: string | null | undefined, color?: string | null | undefined } | { __typename: 'PagesBlocksVerse', body?: string | null | undefined } | { __typename: 'PagesBlocksTestimonial', quote?: string | null | undefined, author?: string | null | undefined, color?: string | null | undefined } | null | undefined> | null | undefined };
+export type PagesPartsFragment = { __typename?: 'Pages', blocks?: Array<{ __typename: 'PagesBlocksHero', tagline?: string | null | undefined, headline?: string | null | undefined, text?: string | null | undefined, color?: string | null | undefined, actions?: Array<{ __typename: 'PagesBlocksHeroActions', label?: string | null | undefined, type?: string | null | undefined, icon?: boolean | null | undefined, link?: string | null | undefined } | null | undefined> | null | undefined, image?: { __typename: 'PagesBlocksHeroImage', src?: string | null | undefined, alt?: string | null | undefined } | null | undefined } | { __typename: 'PagesBlocksFeatures', color?: string | null | undefined, items?: Array<{ __typename: 'PagesBlocksFeaturesItems', title?: string | null | undefined, text?: string | null | undefined, icon?: { __typename: 'PagesBlocksFeaturesItemsIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesBlocksContent', body?: string | null | undefined, color?: string | null | undefined } | { __typename: 'PagesBlocksSocial', title?: string | null | undefined, description?: string | null | undefined, socialImg?: string | null | undefined } | { __typename: 'PagesBlocksVerse', body?: string | null | undefined } | { __typename: 'PagesBlocksTestimonial', quote?: string | null | undefined, author?: string | null | undefined, color?: string | null | undefined } | null | undefined> | null | undefined };
 
 export type GetPostsDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -727,12 +741,12 @@ export type GetPagesDocumentQueryVariables = Exact<{
 }>;
 
 
-export type GetPagesDocumentQuery = { __typename?: 'Query', getPagesDocument: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', blocks?: Array<{ __typename: 'PagesBlocksHero', tagline?: string | null | undefined, headline?: string | null | undefined, text?: string | null | undefined, color?: string | null | undefined, actions?: Array<{ __typename: 'PagesBlocksHeroActions', label?: string | null | undefined, type?: string | null | undefined, icon?: boolean | null | undefined, link?: string | null | undefined } | null | undefined> | null | undefined, image?: { __typename: 'PagesBlocksHeroImage', src?: string | null | undefined, alt?: string | null | undefined } | null | undefined } | { __typename: 'PagesBlocksFeatures', color?: string | null | undefined, items?: Array<{ __typename: 'PagesBlocksFeaturesItems', title?: string | null | undefined, text?: string | null | undefined, icon?: { __typename: 'PagesBlocksFeaturesItemsIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesBlocksContent', body?: string | null | undefined, color?: string | null | undefined } | { __typename: 'PagesBlocksVerse', body?: string | null | undefined } | { __typename: 'PagesBlocksTestimonial', quote?: string | null | undefined, author?: string | null | undefined, color?: string | null | undefined } | null | undefined> | null | undefined } } };
+export type GetPagesDocumentQuery = { __typename?: 'Query', getPagesDocument: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', blocks?: Array<{ __typename: 'PagesBlocksHero', tagline?: string | null | undefined, headline?: string | null | undefined, text?: string | null | undefined, color?: string | null | undefined, actions?: Array<{ __typename: 'PagesBlocksHeroActions', label?: string | null | undefined, type?: string | null | undefined, icon?: boolean | null | undefined, link?: string | null | undefined } | null | undefined> | null | undefined, image?: { __typename: 'PagesBlocksHeroImage', src?: string | null | undefined, alt?: string | null | undefined } | null | undefined } | { __typename: 'PagesBlocksFeatures', color?: string | null | undefined, items?: Array<{ __typename: 'PagesBlocksFeaturesItems', title?: string | null | undefined, text?: string | null | undefined, icon?: { __typename: 'PagesBlocksFeaturesItemsIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesBlocksContent', body?: string | null | undefined, color?: string | null | undefined } | { __typename: 'PagesBlocksSocial', title?: string | null | undefined, description?: string | null | undefined, socialImg?: string | null | undefined } | { __typename: 'PagesBlocksVerse', body?: string | null | undefined } | { __typename: 'PagesBlocksTestimonial', quote?: string | null | undefined, author?: string | null | undefined, color?: string | null | undefined } | null | undefined> | null | undefined } } };
 
 export type GetPagesListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPagesListQuery = { __typename?: 'Query', getPagesList: { __typename?: 'PagesConnection', totalCount: number, edges?: Array<{ __typename?: 'PagesConnectionEdges', node?: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', blocks?: Array<{ __typename: 'PagesBlocksHero', tagline?: string | null | undefined, headline?: string | null | undefined, text?: string | null | undefined, color?: string | null | undefined, actions?: Array<{ __typename: 'PagesBlocksHeroActions', label?: string | null | undefined, type?: string | null | undefined, icon?: boolean | null | undefined, link?: string | null | undefined } | null | undefined> | null | undefined, image?: { __typename: 'PagesBlocksHeroImage', src?: string | null | undefined, alt?: string | null | undefined } | null | undefined } | { __typename: 'PagesBlocksFeatures', color?: string | null | undefined, items?: Array<{ __typename: 'PagesBlocksFeaturesItems', title?: string | null | undefined, text?: string | null | undefined, icon?: { __typename: 'PagesBlocksFeaturesItemsIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesBlocksContent', body?: string | null | undefined, color?: string | null | undefined } | { __typename: 'PagesBlocksVerse', body?: string | null | undefined } | { __typename: 'PagesBlocksTestimonial', quote?: string | null | undefined, author?: string | null | undefined, color?: string | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetPagesListQuery = { __typename?: 'Query', getPagesList: { __typename?: 'PagesConnection', totalCount: number, edges?: Array<{ __typename?: 'PagesConnectionEdges', node?: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', blocks?: Array<{ __typename: 'PagesBlocksHero', tagline?: string | null | undefined, headline?: string | null | undefined, text?: string | null | undefined, color?: string | null | undefined, actions?: Array<{ __typename: 'PagesBlocksHeroActions', label?: string | null | undefined, type?: string | null | undefined, icon?: boolean | null | undefined, link?: string | null | undefined } | null | undefined> | null | undefined, image?: { __typename: 'PagesBlocksHeroImage', src?: string | null | undefined, alt?: string | null | undefined } | null | undefined } | { __typename: 'PagesBlocksFeatures', color?: string | null | undefined, items?: Array<{ __typename: 'PagesBlocksFeaturesItems', title?: string | null | undefined, text?: string | null | undefined, icon?: { __typename: 'PagesBlocksFeaturesItemsIcon', color?: string | null | undefined, style?: string | null | undefined, name?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesBlocksContent', body?: string | null | undefined, color?: string | null | undefined } | { __typename: 'PagesBlocksSocial', title?: string | null | undefined, description?: string | null | undefined, socialImg?: string | null | undefined } | { __typename: 'PagesBlocksVerse', body?: string | null | undefined } | { __typename: 'PagesBlocksTestimonial', quote?: string | null | undefined, author?: string | null | undefined, color?: string | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
 export const PostsPartsFragmentDoc = gql`
     fragment PostsParts on Posts {
@@ -850,6 +864,11 @@ export const PagesPartsFragmentDoc = gql`
     ... on PagesBlocksContent {
       body
       color
+    }
+    ... on PagesBlocksSocial {
+      title
+      description
+      socialImg
     }
     ... on PagesBlocksVerse {
       body

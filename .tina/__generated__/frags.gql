@@ -111,6 +111,11 @@ fragment PagesParts on Pages {
       body
       color
     }
+    ... on PagesBlocksSocial {
+      title
+      description
+      socialImg
+    }
     ... on PagesBlocksVerse {
       body
     }

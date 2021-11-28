@@ -1122,6 +1122,30 @@
               ]
             },
             {
+              "name": "social",
+              "label": "Social Media - Detail",
+              "ui": {
+                "defaultItem": {}
+              },
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Title",
+                  "name": "title"
+                },
+                {
+                  "type": "string",
+                  "label": "description",
+                  "name": "description"
+                },
+                {
+                  "type": "image",
+                  "label": "Image",
+                  "name": "socialImg"
+                }
+              ]
+            },
+            {
               "name": "verse",
               "label": "Verse",
               "ui": {

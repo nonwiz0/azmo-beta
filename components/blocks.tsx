@@ -5,6 +5,7 @@ import { Verse } from "./blocks/verse";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
 import { Testimonial } from "./blocks/testimonial";
+import { Social } from "./blocks/social";
 
 export const Blocks = (props: Pages) => {
   return (
@@ -12,13 +13,20 @@ export const Blocks = (props: Pages) => {
       {props.blocks
         ? props.blocks.map(function (block, i) {
             switch (block.__typename) {
+              case "PagesBlocksSocial":
+                return (
+                  <React.Fragment key={i + block.__typename}>
+                    <Social data={block} />
+                  </React.Fragment>
+                );
+
               case "PagesBlocksVerse":
                 return (
                   <React.Fragment key={i + block.__typename}>
                     <Verse />
                   </React.Fragment>
                 );
-         
+
               case "PagesBlocksContent":
                 return (
                   <React.Fragment key={i + block.__typename}>

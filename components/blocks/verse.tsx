@@ -3,7 +3,6 @@ import { ExtraContext } from "../extra"
 
 export const Verse = () => {
   const { verse }  = useContext(ExtraContext);
-  console.log("verse", verse);
   return (
   <div className="flex items-center justify-center text-white bg-wgray-500">
       <div className="max-w-xl px-5 py-1 mx-5">

@@ -248,12 +248,36 @@ const contentBlockSchema: TinaTemplate = {
   ],
 };
 
+const socialBlockSchema: TinaTemplate = {
+  name: "social",
+  label: "Social Media - Detail",
+  ui: {
+    defaultItem: {},
+  },
+  fields: [
+    {
+      type: "string",
+      label: "Title",
+      name: "title",
+    },
+    {
+      type: "string",
+      label: "description",
+      name: "description",
+    },
+    {
+      type: "image",
+      label: "Image",
+      name: "socialImg",
+    },
+  ],
+};
+
 const verseBlockSchema: TinaTemplate = {
   name: "verse",
   label: "Verse",
   ui: {
-    defaultItem: {
-    },
+    defaultItem: {},
   },
   fields: [
     {
@@ -878,6 +902,7 @@ export default defineSchema({
         },
       ],
     },
+
     {
       label: "Pages",
       name: "pages",
@@ -892,6 +917,7 @@ export default defineSchema({
             heroBlockSchema,
             featureBlockShema,
             contentBlockSchema,
+            socialBlockSchema,
             verseBlockSchema,
             testimonialBlockSchema,
           ],

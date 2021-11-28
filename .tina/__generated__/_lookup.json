@@ -102,6 +102,7 @@
       "hero": "PagesBlocksHero",
       "features": "PagesBlocksFeatures",
       "content": "PagesBlocksContent",
+      "social": "PagesBlocksSocial",
       "verse": "PagesBlocksVerse",
       "testimonial": "PagesBlocksTestimonial"
     }

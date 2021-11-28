@@ -267,6 +267,12 @@ type PagesBlocksContent {
   color: String
 }
 
+type PagesBlocksSocial {
+  title: String
+  description: String
+  socialImg: String
+}
+
 type PagesBlocksVerse {
   body: String
 }
@@ -277,7 +283,7 @@ type PagesBlocksTestimonial {
   color: String
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksVerse | PagesBlocksTestimonial
+union PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksSocial | PagesBlocksVerse | PagesBlocksTestimonial
 
 type Pages {
   blocks: [PagesBlocks]
@@ -446,6 +452,12 @@ input PagesBlocksContentMutation {
   color: String
 }
 
+input PagesBlocksSocialMutation {
+  title: String
+  description: String
+  socialImg: String
+}
+
 input PagesBlocksVerseMutation {
   body: String
 }
@@ -460,6 +472,7 @@ input PagesBlocksMutation {
   hero: PagesBlocksHeroMutation
   features: PagesBlocksFeaturesMutation
   content: PagesBlocksContentMutation
+  social: PagesBlocksSocialMutation
   verse: PagesBlocksVerseMutation
   testimonial: PagesBlocksTestimonialMutation
 }

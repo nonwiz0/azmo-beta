@@ -4,8 +4,10 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import layoutData from "../content/global/index.json";
 import { Theme } from "./theme";
+import Script from 'next/script';
 
 export const Layout = ({ rawData = "", data = layoutData, children }) => {
+  const detail =  {'type': 'floating-chat', 'floating-chat.donateButton.text': 'Support me', 'floating-chat.donateButton.background-color': '#00b9fe', 'floating-chat.donateButton.text-color': '#fff'}
   return (
     <>
       <Head>
@@ -59,6 +61,11 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
           />
         </div>
       </Theme>
+
+<Script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js' />
+      <Script>
+      </Script>
+
     </>
   );
 };

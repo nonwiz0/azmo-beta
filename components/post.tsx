@@ -1,5 +1,4 @@
 import React from "react";
-import Markdown from "react-markdown";
 import { Container } from "./container";
 import { Section } from "./section";
 import { ThemeContext } from "./theme";
@@ -9,21 +8,25 @@ import Attachment from "./mdx/attachment";
 import AttachCols from "./mdx/attachCols";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Verse } from "./blocks/verse";
-import Link from "next/link";
+import { DiscussionEmbed } from "disqus-react";
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const components = {
   Minisection: (data) => {
     return <Minisection section={data} />;
   },
   Attachment: (data) => {
-   return <Attachment section={data} />
+    return <Attachment section={data} />;
   },
-  AttachCols: data => {
-    return <AttachCols section={data} />
+  AttachCols: (data) => {
+    return <AttachCols section={data} />;
   },
 };
 
 export const Post = ({ data }) => {
+  const router = useRouter();
+  console.log("Props:", router.asPath, data, `https://www.azmo.page${router.asPath}`);
   const theme = React.useContext(ThemeContext);
   const titleColorClasses = {
     blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
@@ -50,6 +53,19 @@ export const Post = ({ data }) => {
 
   return (
     <Section>
+      <Head>
+        <title> {data.title} | Azmo</title>
+        <meta property="og:title" content={data.title} />
+        <meta property="description" content={data.excerpt} />
+        <meta property="og:description" content={data.excerpt} />
+        <meta property="og:image" content={data.socialImg ? data.socialImg : data.heroImg} />
+        <meta property="twitter:title" content={data.title} />
+        <meta property="twitter:description" content={data.excerpt} />
+        <meta
+          property="twitter:image" content={data.socialImg ? data.socialImg : data.heroImg}
+        />
+      </Head>
+ 
       <Container size="medium">
         <div className="flex-row md:flex">
           <div>
@@ -94,10 +110,21 @@ export const Post = ({ data }) => {
         </div>
       </Container>
       <Verse />
-      <Container className={`flex-1 pt-4`} size="large">
+      <Container className={`flex-1 pt-4`} size="small">
         <div className="w-full prose dark:prose-dark max-w-none">
           <TinaMarkdown components={components} content={data.body} />
         </div>
+      </Container>
+      <Container size="small">
+        <DiscussionEmbed
+          shortname="azmo-1"
+          config={{
+            url: `https://www.azmo.page${router.asPath}`,
+            identifier: `${router.query.id}`,
+            title: data.title,
+            language: "en",
+          }}
+        />
       </Container>
     </Section>
   );
