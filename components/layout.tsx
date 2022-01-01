@@ -7,7 +7,6 @@ import { Theme } from "./theme";
 import Script from 'next/script';
 
 export const Layout = ({ rawData = "", data = layoutData, children }) => {
-  const detail =  {'type': 'floating-chat', 'floating-chat.donateButton.text': 'Support me', 'floating-chat.donateButton.background-color': '#00b9fe', 'floating-chat.donateButton.text-color': '#fff'}
   return (
     <>
       <Head>
@@ -61,11 +60,17 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
           />
         </div>
       </Theme>
-
-<Script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js' />
-      <Script>
-      </Script>
-
+      <Script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js' strategy="afterInteractive" />
+{/* <Script strategy="lazyOnload"> */}
+{/*   {` */}
+{/*   kofiWidgetOverlay.draw('nonwiz', { */}
+{/*     'type': 'floating-chat', */}
+{/*     'floating-chat.donateButton.text': 'Donate', */}
+{/*     'floating-chat.donateButton.background-color': '#78716C', */}
+{/*     'floating-chat.donateButton.text-color': '#fff' */}
+{/*   }); */}
+{/*   `} */}
+{/* </Script> */}
     </>
   );
 };
